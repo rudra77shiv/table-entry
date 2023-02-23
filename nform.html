@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width= device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+      function validateForm() {
+        let fname = $("#firstName").val();
+        let lname = $("#lastName").val();
+        let email = $("#email").val();
+        let Contact = $("#Contact").val();
+        let Address1 = $("#address1").val();
+        let Address2 = $("#address2").val();
+        let City = $("#city").val();
+        let Zip = $("#zip").val();
+        let Country = $("#country").val();
+        let table = $("#table");
+        let tr ="<tr><td>" + fname + lname + "</td><td>" + email + "</td><td>" + Contact +"</td><td>" + Address1 + Address2 +"</td><td>" + City +"</td><td>" + Zip +"</td><td>" + Country +"</td></tr>";
+        table.append(tr);
+        if (firstName == "" || lastName == "" || email == "" || Contact == ""|| address1 == ""|| address2 == ""|| city == ""|| Zip == ""|| Country == "" ) {
+          alert("Please fill in all required fields.");
+          return false;}
+      }
+    </script>
+    <style>
+      #heading {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      #table {
+        width: 95%;
+        height: 104px;
+        border: 3px solid;
+        margin: 32px;
+      }
+      body {
+        padding: 20px 60px;
+      }
+
+      form {
+        display: inline-block;
+      }
+      .formdesign input {
+        border: 1px solid;
+      }
+      h1 {
+        margin-left: 32px;
+      }
+      .border {
+        border: 1px solid;
+        padding: 10px;
+      }
+      .btn :hover{
+        background-color: aqua;
+      }
+      .btn {
+        
+        align-items: center;
+      }
+      .inp {
+        float: div;
+      }
+      .userDet {
+        padding: 20px;
+      }
+      .inputflex {
+        margin-right: 20rem;
+        margin-bottom: 5px;
+      }
+      th {
+        height: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="border">
+      <h1 id="heading">Contact</h1>
+      <table id="table" border="1">
+        <tr>
+          <th>Full Name</th>
+          <th>Email</th>
+          <th>Contact</th>
+          <th>Address</th>
+          <th>City</th>
+          <th>Zip Code</th>
+          <th>Country</th>
+        </tr>
+        <tbody></tbody>
+        <tr></tr>
+      </table>
+
+      <form class="userDet" name="myform" onsubmit="return validateForm()">
+        <label for="#firstname">FirstName: </label>
+        <input
+          class="inputflex"
+          type="text"
+          id="firstName"
+          name="firstName"
+          required=""
+        />
+        <label for="lastname">Lastname:</label>
+        <input class="inputflex"type="text"id="lastName" name="lastName" required=""/><br />
+        <label for="Email"> </label>
+        Email:<input class="inputflex" id="email" type="text" name="name" align="left"/>
+        <label for="Contact"> </label>
+        Contact:
+        <input class="inputflex" id="Contact" type="number" name="name" /><br />
+        <label for="Address1"></label>
+        Address 1:
+        <input class="inputflex" id="address1" type="text" name="name" />
+        <label for="Address2"></label>
+        Address 2:
+        <input class="inputflex" id="address2" type="text" name="name" /><br />
+        <label for="City"> </label>
+        City:<input class="inputflex" id="city" type="text" name="name" />
+        <label for="zip code"></label>
+        Zip code:<input type="text" id="zip" name="name" /><br />
+        <label for="Country"></label>
+        Country:<input class="inputflex" id="country" type="text" name="name" />
+      </form>
+      <center>
+        <div class="btn">
+          <button>cancel</button> <button onclick="validateForm()">sumbit</button>
+        </div>
+      </center>
+    </div>
+  </body>
+</html>
